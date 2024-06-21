@@ -28,5 +28,10 @@ namespace Aspnet_api_products.Controllers
             ProductService productsService = new ProductService();
             return productsService.SearchProducts(title);
         }
+        [HttpGet("categories/{category}")]
+        public List<ProductDTO>? FilterProducts([FromQuery] float? minPrice, [FromQuery] float? maxPrice, string category) { 
+            ProductService productsService = new ProductService();
+            return productsService.FilterProducts(category, minPrice, maxPrice);
+        }
     }
 }

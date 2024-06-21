@@ -6,7 +6,7 @@ namespace Aspnet_api_products.Interfaces
     {
         List<ProductDTO>? GetAllProducts();
         Product? GetOneProduct(string title);
-        List<Product>? FilterProducts(string category, float price);
+        List<ProductDTO>? FilterProducts(string category, float? minPrice, float? maxPrice);
         List<ProductDTO>? SearchProducts(string title);
     }
 }

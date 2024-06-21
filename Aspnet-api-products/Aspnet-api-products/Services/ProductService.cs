@@ -6,9 +6,10 @@ namespace Aspnet_api_products.Services
 {
     public class ProductService : IProductRepository
     {
-        public List<Product> FilterProducts(string category, float price)
+        public List<ProductDTO>? FilterProducts(string category, float? minPrice, float? maxPrice)
         {
-            throw new NotImplementedException();
+            IProductRepository productRepository = new ProductRepositoryWS();
+            return productRepository.FilterProducts(category, minPrice, maxPrice);
         }
 
         public List<ProductDTO>? GetAllProducts()
