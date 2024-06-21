@@ -21,10 +21,15 @@ namespace Aspnet_api_products.Repositories
                 Console.WriteLine("Products not found!");
                 return null;
             }
-                
-            return listOfProducts.products
-                .Select(p => new ProductDTO(p.title, p.description, p.thumbnail, p.price))
-                .ToList();
+
+            var listResult = listOfProducts.products.Select(p => new ProductDTO(
+                p.title,
+                p.description.Length > 100 ? p.description.Substring(0, 100) + "..." : p.description,
+                p.thumbnail,
+                p.price
+            )).ToList();
+
+            return listResult;
         }
 
         public List<Product> GetOneProduct(string title)
