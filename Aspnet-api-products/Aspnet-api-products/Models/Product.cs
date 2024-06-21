@@ -1,17 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Aspnet_api_products.Models;
-
-public partial class Product
+﻿namespace Aspnet_api_products.Models
 {
-    public int Id { get; set; }
-
-    public string Title { get; set; } = null!;
-
-    public string? Description { get; set; }
-
-    public double? Price { get; set; }
-
-    public string? Image { get; set; }
+    public class Product
+    {
+        public int id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public string category { get; set; }
+        public float price { get; set; }
+        public float discountPercentage { get; set; }
+        public float rating { get; set; }
+        public int stock { get; set; }
+        public string[] tags { get; set; }
+        public string brand { get; set; }
+        public string sku { get; set; }
+        public int weight { get; set; }
+        public Dimensions dimensions { get; set; }
+        public string warrantyInformation { get; set; }
+        public string shippingInformation { get; set; }
+        public string availabilityStatus { get; set; }
+        public Review[] reviews { get; set; }
+        public string returnPolicy { get; set; }
+        public int minimumOrderQuantity { get; set; }
+        public Meta meta { get; set; }
+        public string[] images { get; set; }
+        public string thumbnail { get; set; }
+    }
 }
