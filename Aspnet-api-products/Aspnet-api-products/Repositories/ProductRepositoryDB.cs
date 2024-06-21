@@ -15,7 +15,7 @@ namespace Aspnet_api_products.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Product> GetOneProduct(string title)
+        public Product GetOneProduct(string title)
         {
             throw new NotImplementedException();
         }
