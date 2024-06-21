@@ -5,7 +5,7 @@ namespace Aspnet_api_products.Repositories
 {
     public class ProductRepositoryFS : IProductRepository
     {
-        public List<Product> FilterProducts(string category, float price)
+        public List<ProductDTO> FilterProducts(string category, float? minPrice, float? maxPrice)
         {
             throw new NotImplementedException();
         }
@@ -15,7 +15,7 @@ namespace Aspnet_api_products.Repositories
             throw new NotImplementedException();
         }
 
-        public Product GetOneProduct(string title)
+        public Product GetOneProduct(int id)
         {
             throw new NotImplementedException();
         }
