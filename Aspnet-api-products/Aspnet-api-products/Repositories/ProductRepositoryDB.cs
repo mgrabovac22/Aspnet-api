@@ -20,7 +20,7 @@ namespace Aspnet_api_products.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Product> SearchProducts(string title)
+        public List<ProductDTO> SearchProducts(string title)
         {
             throw new NotImplementedException();
         }

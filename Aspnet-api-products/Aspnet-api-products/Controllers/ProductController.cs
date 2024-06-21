@@ -11,16 +11,22 @@ namespace Aspnet_api_products.Controllers
     public class ProductController : ControllerBase
     {
         [HttpGet]
-        public List<ProductDTO> FetchAllJSONObjects()
+        public List<ProductDTO>? FetchAllJSONObjects()
         {
             ProductService productService = new ProductService();
             return productService.GetAllProducts();
         }
         [HttpGet("{title}")]
-        public Product FetchOneJSONObject(string title)
+        public Product? FetchOneJSONObject(string title)
         {
             ProductService productService = new ProductService();
             return productService.GetOneProduct(title);
+        }
+        [HttpGet("search")]
+        public List<ProductDTO>? SearchProducts([FromQuery] string title)
+        {
+            ProductService productsService = new ProductService();
+            return productsService.SearchProducts(title);
         }
     }
 }
