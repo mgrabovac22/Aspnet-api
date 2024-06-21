@@ -4,9 +4,9 @@ namespace Aspnet_api_products.Interfaces
 {
     public interface IProductRepository
     {
-        List<ProductDTO> GetAllProducts();
-        Product GetOneProduct(string title);
-        List<Product> FilterProducts(string category, float price);
-        List<Product> SearchProducts(string title);
+        List<ProductDTO>? GetAllProducts();
+        Product? GetOneProduct(string title);
+        List<Product>? FilterProducts(string category, float price);
+        List<ProductDTO>? SearchProducts(string title);
     }
 }

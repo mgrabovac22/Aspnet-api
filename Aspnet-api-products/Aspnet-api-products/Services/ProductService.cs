@@ -11,21 +11,22 @@ namespace Aspnet_api_products.Services
             throw new NotImplementedException();
         }
 
-        public List<ProductDTO> GetAllProducts()
+        public List<ProductDTO>? GetAllProducts()
         {
             IProductRepository productRepository = new ProductRepositoryWS();
             return productRepository.GetAllProducts();
         }
 
-        public Product GetOneProduct(string title)
+        public Product? GetOneProduct(string title)
         {
             IProductRepository productRepository = new ProductRepositoryWS();
             return productRepository.GetOneProduct(title);
         }
 
-        public List<Product> SearchProducts(string title)
+        public List<ProductDTO>? SearchProducts(string title)
         {
-            throw new NotImplementedException();
+            IProductRepository productRepository = new ProductRepositoryWS();
+            return productRepository.SearchProducts(title);
         }
     }
 }
