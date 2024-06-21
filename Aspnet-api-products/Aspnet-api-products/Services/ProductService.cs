@@ -17,9 +17,10 @@ namespace Aspnet_api_products.Services
             return productRepository.GetAllProducts();
         }
 
-        public List<Product> GetOneProduct(string title)
+        public Product GetOneProduct(string title)
         {
-            throw new NotImplementedException();
+            IProductRepository productRepository = new ProductRepositoryWS();
+            return productRepository.GetOneProduct(title);
         }
 
         public List<Product> SearchProducts(string title)

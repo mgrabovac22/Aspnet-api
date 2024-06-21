@@ -32,9 +32,25 @@ namespace Aspnet_api_products.Repositories
             return listResult;
         }
 
-        public List<Product> GetOneProduct(string title)
+        public Product? GetOneProduct(string title)
         {
-            throw new NotImplementedException();
+            var client = new HttpClient();
+            Result? listOfProducts = null;
+
+            Task.Run(async () =>
+            {
+                listOfProducts = await client.GetFromJsonAsync<Result>("https://dummyjson.com/products");
+            }).Wait();
+
+            if (listOfProducts == null || listOfProducts.products == null)
+            {
+                Console.WriteLine("Products not found!");
+                return null;
+            }
+
+            var product = listOfProducts.products.FirstOrDefault(p => p.title.Equals(title));
+
+            return product;
         }
 
         public List<Product> SearchProducts(string title)
