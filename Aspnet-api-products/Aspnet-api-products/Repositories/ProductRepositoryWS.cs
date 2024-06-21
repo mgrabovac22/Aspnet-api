@@ -69,7 +69,7 @@ namespace Aspnet_api_products.Repositories
                 return null;
             }
 
-            var filteredProducts = listOfProducts.products.Where(p => p.title.Contains(title)).ToList();
+            var filteredProducts = listOfProducts.products.Where(p => p.title.ToLower().Contains(title.ToLower())).ToList();
 
             var listResult = filteredProducts.Select(p => new ProductDTO(
                p.title,
