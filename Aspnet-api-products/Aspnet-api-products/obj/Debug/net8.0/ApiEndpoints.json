@@ -40,14 +40,14 @@
   {
     "ContainingType": "Aspnet_api_products.Controllers.ProductController",
     "Method": "FetchOneJSONObject",
-    "RelativePath": "api/products/{title}",
+    "RelativePath": "api/products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "title",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

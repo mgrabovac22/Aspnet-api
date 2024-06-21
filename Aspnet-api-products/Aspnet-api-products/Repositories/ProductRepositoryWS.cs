@@ -32,7 +32,7 @@ namespace Aspnet_api_products.Repositories
             return listResult;
         }
 
-        public Product? GetOneProduct(string title)
+        public Product? GetOneProduct(int id)
         {
             var client = new HttpClient();
             Result? listOfProducts = null;
@@ -48,7 +48,7 @@ namespace Aspnet_api_products.Repositories
                 return null;
             }
 
-            var product = listOfProducts.products.FirstOrDefault(p => p.title.Equals(title));
+            var product = listOfProducts.products.FirstOrDefault(p => p.id.Equals(id));
 
             return product;
         }
