@@ -30,6 +30,15 @@ Projekt je strukturiran prema preporučenim dobrim praksama i konvencijama:
 - `Intefaces` - Sadrži sučelja
 - `Repositories` - Sadrži kod za pristup podacima
 
+## Testiranje aplikacije
+
+### Preduvjeti:
+
+- Trebate imati instaliran visual studio sa ASP.Net frameworkom.
+  
+
+Da bi testirali ovu aplikaciju trebate skinuti zip ovog repozitorija te raspakirati taj zip. Kada se raspakira trebate pokrenuti .sln(solution) datoteku. Zatim je potrebno pokrenuti program. Nakon toga trebate ukucati u preglednik: "http://localhost:5555api" umjesto "api" treba ukucati jedan od apija naknadno navedenih.
+
 ## API Dokumentacija
 
 ### Endpointi
