@@ -1,7 +1,42 @@
-# Aspnet-api
-Stručni zadatak za .NET developera.
+# Product Middleware REST API
 
-## Endpointovi
+Ovaj projekt implementira middleware REST API za dohvat proizvoda iz različitih izvora. Trenutno podržava dohvat proizvoda iz REST API izvora. API omogućava napredno filtriranje proizvoda i pretragu po nazivu.
+
+## Tehnologije
+
+- .NET 8
+- ASP.NET Web API
+- Entity Framework
+
+## Funkcionalnosti
+
+- **Dohvat liste proizvoda**: Vraća listu proizvoda sa slikom, nazivom, cijenom i skraćenim opisom (do 100 znakova)
+- **Dohvat detalja proizvoda**: Vraća detalje pojedinog proizvoda
+- **Filtriranje proizvoda**: Omogućava filtriranje proizvoda po kategoriji i cijeni
+- **Pretraga proizvoda po nazivu**: Pretražuje proizvode po unesenom tekstu
+
+### "Nice to have" funkcionalnosti
+
+- Autentifikacija i autorizacija
+- Keširanje rezultata pretrage i filtriranja
+- Logiranje (Info, Warning, Error)
+- Testovi (Integracijski, Unit)
+
+## Struktura Projekta
+
+Projekt je strukturiran prema preporučenim dobrim praksama i konvencijama:
+
+- `Controllers` - Sadrži API kontrolere
+- `Models` - Sadrži modele podataka
+- `Services` - Sadrži poslovnu logiku
+- `Repositories` - Sadrži kod za pristup podacima
+- `DTOs` - Sadrži Data Transfer Objekte
+- `Configurations` - Sadrži konfiguracijske postavke
+
+## API Dokumentacija
+
+### Endpointi
+
 
 | Endpoint | Metoda | Opis | Primjer zahtjeva |
 |----------|--------|------|------------------|
