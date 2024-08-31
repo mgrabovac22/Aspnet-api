@@ -1,58 +1,58 @@
 # Product Middleware REST API
 
-Ovaj projekt implementira middleware REST API za dohvat proizvoda iz različitih izvora. Trenutno podržava dohvat proizvoda iz REST API izvora. API omogućava napredno filtriranje proizvoda i pretragu po nazivu.
+This project implements a middleware REST API for retrieving products from various sources. Currently, it supports fetching products from REST API sources. The API allows advanced product filtering and searching by name.
 
-## Tehnologije
+## Technologies
 
 - .NET 8
 - ASP.NET Web API
 - Entity Framework
 
-## Funkcionalnosti
+## Features
 
-- **Dohvat liste proizvoda**: Vraća listu proizvoda sa slikom, nazivom, cijenom i skraćenim opisom (do 100 znakova)
-- **Dohvat detalja proizvoda**: Vraća detalje pojedinog proizvoda
-- **Filtriranje proizvoda**: Omogućava filtriranje proizvoda po kategoriji i cijeni
-- **Pretraga proizvoda po nazivu**: Pretražuje proizvode po unesenom tekstu
+- **Retrieve product list**: Returns a list of products with an image, name, price, and short description (up to 100 characters).
+- **Retrieve product details**: Returns details of a specific product.
+- **Product filtering**: Allows filtering products by category and price.
+- **Search products by name**: Searches products based on the entered text.
 
-### "Nice to have" funkcionalnosti
+### "Nice to have" features
 
-- Keširanje rezultata pretrage i filtriranja
-- Logiranje (Info, Warning, Error)
+- Caching of search and filtering results
+- Logging (Info, Warning, Error)
 
-## Struktura Projekta
+## Project Structure
 
-Projekt je strukturiran prema preporučenim dobrim praksama i konvencijama:
+The project is structured according to recommended best practices and conventions:
 
-- `Controllers` - Sadrži API kontrolere
-- `Models` - Sadrži modele podataka i DTO-e
-- `Services` - Sadrži poslovnu logiku
-- `Intefaces` - Sadrži sučelja
-- `Repositories` - Sadrži kod za pristup podacima
+- `Controllers` - Contains API controllers
+- `Models` - Contains data models and DTOs
+- `Services` - Contains business logic
+- `Interfaces` - Contains interfaces
+- `Repositories` - Contains data access code
 
-## Testiranje aplikacije
+## Testing the Application
 
-### Preduvjeti:
+### Prerequisites:
 
-- Trebate imati instaliran visual studio sa ASP.Net frameworkom.
-  
+- You need to have Visual Studio installed with the ASP.NET framework.
 
-Da bi testirali ovu aplikaciju trebate skinuti zip ovog repozitorija te raspakirati taj zip. Kada se raspakira trebate pokrenuti .sln(solution) datoteku. Zatim je potrebno pokrenuti program. Nakon toga trebate ukucati u preglednik: "http://localhost:5555api" umjesto "api" treba ukucati jedan od apija naknadno navedenih.
+To test this application, you need to download the zip file of this repository and extract it. Once extracted, open the .sln (solution) file. Then, run the program. After that, enter the following in your browser: "http://localhost:5555api", replacing "api" with one of the APIs listed below.
 
-## API Dokumentacija
+## API Documentation
 
-### Endpointi
+### Endpoints
 
+| Endpoint | Method | Description | Example Request |
+|----------|--------|-------------|-----------------|
+| `/api/products` | GET | Returns a list of products with an image, name, price, and short description (up to 100 characters). | `GET /api/products` |
+| `/api/products/{id}` | GET | Returns the details of a single product based on its ID. | `GET /api/products/1` |
+| `/api/products/search` | GET | Searches products by name. | `GET /api/products/search?title=Product` |
+| `/api/products/categories/{category}` | GET | Filters products by category and price. | `GET /api/products/categories/electronics?minPrice=50&maxPrice=500` |
 
-| Endpoint | Metoda | Opis | Primjer zahtjeva |
-|----------|--------|------|------------------|
-| `/api/products` | GET | Vraća listu proizvoda sa slikom, nazivom, cijenom i skraćenim opisom (do 100 znakova). | `GET /api/products` |
-| `/api/products/{id}` | GET | Vraća detalje jednog proizvoda na temelju njegovog ID-a. | `GET /api/products/1` |
-| `/api/products/search` | GET | Pretražuje proizvode po nazivu. | `GET /api/products/search?title=Product` |
-| `/api/products/categories/{category}` | GET | Filtrira proizvode po kategoriji i cijeni. | `GET /api/products/categories/electronics?minPrice=50&maxPrice=500` |
+**Example Request:**
 
-**Primjer zahtjeva:**
 ```http
+
 GET /api/products
 
 [
@@ -69,9 +69,6 @@ GET /api/products
         "price": 149.99
     }
 ]
-```
-
-```http
 GET /api/products/1
 
 {
@@ -134,9 +131,6 @@ GET /api/products/1
   ],
   "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
 }
-```
-
-```http
 GET /api/products/search?title=Product
 
 [
@@ -153,9 +147,6 @@ GET /api/products/search?title=Product
         "price": 149.99
     }
 ]
-```
-
-```http
 GET /api/products/categories/electronics?minPrice=50&maxPrice=500
 
 [
